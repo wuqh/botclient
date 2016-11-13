@@ -18,7 +18,7 @@ Authorization: BotConnector RCurR_XV9ZA.cwA.BKA.iaJrC8xpy8qbOF5xnR2vtCX7CZj0LdjA
 ```
 构建报文头
 HttpPost httpPost = new HttpPost(DIRECTLINE_URL);
-httpPost.addHeader("Authorization", "BotConnector ****");//这里和C#的主要差别
+httpPost.addHeader("Authorization", "BotConnector ****");//这里和C#的主要差别，，每次请求都需要带上这个头
 
 ```
 响应
