@@ -193,9 +193,11 @@ public class BotRestClientTest {
 		if(entity!=null){
 			String httpStr = EntityUtils.toString(entity, "UTF-8");
 			JSONObject jsonObjectResponse = JSONObject.fromObject(httpStr);
-			JSONArray array=jsonObjectResponse.getJSONArray("messages");
-			if(array.size()>0){
-				logger.info("响应："+array.getJSONObject(array.size()-1).getString("text"));
+			if(jsonObjectResponse.containsKey("messages")){
+				JSONArray array=jsonObjectResponse.getJSONArray("messages");
+				if(array.size()>0){
+					logger.info("响应："+array.getJSONObject(array.size()-1).getString("text"));
+				}
 			}
 			
 		}
